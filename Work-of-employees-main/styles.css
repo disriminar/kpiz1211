@@ -1,0 +1,177 @@
+.flexed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial;
+}
+/* колонка і nbar*/
+section.top {
+  width: 100%;
+  height: 90%;
+}
+/*дизайн колонки */
+section.top .list {
+  height: 100%;
+  width: 25%;
+  background: #e4f0ff;
+  flex-direction: column;
+  justify-content: start;
+  border: 2px solid #d1deff;
+}
+/*список працівників в колонці */
+section.top .list .employee {
+  justify-content: space-between;
+  font: 700 1.2em Arial;
+  width: 94%;
+  padding: 4px 10px;
+  margin: 6px 0px;
+  background: #d1deff;
+  cursor: pointer;
+}
+section.top .list .employee span {
+  pointer-events: none;
+}
+section.top .list .employee:first-child {
+  margin-top: 20px;
+}
+section.top .list .employee.visible {
+  background: #2196f3;
+  color: white;
+}
+section.top .list .employee.visible:hover {
+  background: #696e72;
+  width: 94%;
+}
+
+/*хз що робить */
+section.top .list .employee .option:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.top .list .employee .option:hover:before {
+  background: rgba(255, 255, 255, 0.2);
+}
+section.top .list .employee .edit {
+  margin: 0px 10px;
+}
+section.top .list .employee:hover .option {
+  visibility: visible;
+}
+/*відчиняється з новим працівником */
+section.top #card {
+  height: 100%;
+  width: 75%;
+  justify-content: start;
+  font: 30px Arial;
+  visibility: hidden;
+}
+section.top #card.visible {
+  visibility: visible;
+}
+/*дизайн піб вік  */
+section.top #card #employeeImg {
+  margin: 0px 30px;
+}
+section.top #card .p {
+  background: #e4f0ff;
+}
+section.top #card td {
+  padding: 6px 18px;
+}
+/*появлення nbar знизу */
+section.bottom {
+  width: 100%;
+  height: 10%;
+  background: #e4f0ff;
+}
+/* Круг який додає роботників */
+section.bottom #add {
+  width: 100%;
+  height: 64px;
+  margin: 0;
+  background: #2196f3;
+  color: white;
+  font: 900 3em Arial;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px -6px rgba(0, 0, 0, 0.75);
+}
+section.bottom #add:active {
+  transform: scale(0.8);
+}
+
+/* віконце яке відкривається щоб додати робітників*/
+#overflow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  top: 0;
+  left: 0;
+}
+#overflow.visible {
+  display: flex;
+}
+/* щоб спливаюче вікно закрити */
+#overflow #overflowDark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+/* щоб спливаюче вікно було відокремлене від загального фону*/
+#overflow .in-overflow {
+  padding: 40px;
+  background: #d1deff;
+  z-index: 1;
+  box-shadow: 4px 4px 8px -6px rgba(0, 0, 0, 0.75);
+}
+/* до input */
+#overflow .inputs input {
+  margin: 6px 0px;
+  border: 1 solid;
+  padding: 6px 18px;
+  font-size: 1.2em;
+  width: 320px;
+}
+#overflow .inputs .small input {
+  width: 120px;
+}
+/* до картинки */
+#overflow #photoInput {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+#overflow #photo {
+  margin-right: 30px;
+}
+/* дизайн іput */
+#overflow #submit {
+  padding: 4px 14px;
+  font-size: 1.2em;
+  border: none;
+  background: #2196f3;
+  color: white;
+  margin-top: 6px;
+  border-radius: 6666px;
+}
+#overflow h2 {
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+}
